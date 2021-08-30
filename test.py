@@ -119,7 +119,7 @@ estimators = []
 # estimators.append(('standardize', StandardScaler()))
 estimators.append(('mlp', KerasRegressor(build_fn=create_deep_learning_model, epochs=10)))
 pipeline = Pipeline(estimators)
-kfold = KFold(n_splits=5,random_state=76,shuffle=True)
+kfold = KFold(n_splits=8,random_state=76,shuffle=True)
 results = cross_val_score(pipeline, X, Y, cv=kfold)
 
 print("%.2f (%.2f) MAE" % (results.mean(), results.std()))
