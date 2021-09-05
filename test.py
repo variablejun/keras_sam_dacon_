@@ -119,13 +119,13 @@ estimators = []
 # estimators.append(('standardize', StandardScaler()))
 estimators.append(('mlp', KerasRegressor(build_fn=create_deep_learning_model, epochs=10)))
 pipeline = Pipeline(estimators)
-kfold = KFold(n_splits=9.5,random_state=76,shuffle=True)
+kfold = KFold(n_splits=9,random_state=76,shuffle=True)
 results = cross_val_score(pipeline, X, Y, cv=kfold)
 
 print("%.2f (%.2f) MAE" % (results.mean(), results.std()))
 
 model = create_deep_learning_model()
-model.fit(X, Y, epochs = 20)
+model.fit(X, Y, epochs = 50)
 test_y = model.predict(np_test_fps_array)
 ss['ST1_GAP(eV)'] = test_y
 
