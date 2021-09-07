@@ -102,6 +102,8 @@ def create_deep_learning_model():
     model.add(Dense(2048, input_dim=2048, kernel_initializer='random_uniform', activation='softplus'))
     model.add(Dense(1024, activation='softplus'))
     model.add(Dense(100, activation='softplus'))
+    model.add(Dense(100, activation='softplus'))
+    model.add(Dense(100, activation='softplus'))
 
     model.add(Dense(1, kernel_initializer='random_uniform'))
     model.compile(loss='mean_absolute_error', optimizer='adam')
