@@ -101,6 +101,11 @@ def create_deep_learning_model():
     model = Sequential()
     model.add(Dense(2048, input_dim=2048, kernel_initializer='random_uniform', activation='softplus'))
     model.add(Dense(1024, activation='softplus'))
+    model.add(Dense(512, activation='softplus'))
+    model.add(Dropout(0.4))
+    model.add(Dense(256, activation='softplus'))
+    model.add(Dense(128, activation='softplus'))
+    
     model.add(Dense(100, activation='softplus'))
 
     model.add(Dense(1, kernel_initializer='random_uniform'))
