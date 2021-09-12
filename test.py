@@ -103,9 +103,6 @@ def create_deep_learning_model():
     model.add(Dense(1024, activation='softplus'))
     model.add(Dense(512, activation='softplus'))
     model.add(Dense(512, activation='softplus'))
-    model.add(Dense(512, activation='softplus'))
-    model.add(Dense(512, activation='softplus'))
-    model.add(Dense(512, activation='softplus'))
     
     
     model.add(Dense(100, activation='softplus'))
